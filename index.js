@@ -6,7 +6,16 @@ function load() {
 
     fetch(url)
         .then(function(response) {
-            console.log(response.json());
-            // return response.json()
+            // console.log(response.json());
+            return response.json()
+        })
+        .then(function(data) {
+            let ul = document.getElementById('list')
+            // console.log(ul);
+            let html = data.map(function(item) {
+                return `<li>${item.id} ${item.name} (${item.email})</li>`
+            })
+            // console.log(html);
+            ul.insertAdjacentHTML('afterbegin', html.join(' '))
         })
 }
