@@ -16,6 +16,11 @@ function load() {
                 return `<li>${item.id} ${item.name} (${item.email})</li>`
             })
             // console.log(html);
-            ul.insertAdjacentHTML('afterbegin', html.join(' '))
+            // ul.insertAdjacentHTML('afterbegin', html.join(' '))
+
+            if (ul.querySelector('li')) {
+            } else {
+                ul.insertAdjacentHTML('afterbegin', html.join(' '))
+            }
         })
 }
